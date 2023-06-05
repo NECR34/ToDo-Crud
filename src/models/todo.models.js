@@ -1,12 +1,9 @@
 const db = require( '../utils/database' );
 const { DataTypes } = require('sequelize');
 
-const toDo = db.define('todo_crud', {
-    id:{
-        type: DataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true
-    },
+
+const toDo = db.define('todo', {
+   
     title:{
         type: DataTypes.STRING(100),
         allowNull: false
@@ -19,6 +16,11 @@ const toDo = db.define('todo_crud', {
         type: DataTypes.BOOLEAN,
         allowNull: false,
         defaultValue: false
+    },
+    userId: {
+        type: DataTypes.INTEGER,
+        defaultValue: 1,
+        field: 'user_id',
     }
 });
 
